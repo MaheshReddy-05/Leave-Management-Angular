@@ -1,0 +1,11 @@
+<div>
+    <h1>Upcomming Leaves & Holidays</h1>
+    <ul *ngFor="let holidays of getHolidays()">
+        <div>
+            <li>
+                <span>{{holidays.holidayDate}}</span>
+                <span>{{holidays.holidayName}}</span>
+            </li>
+        </div>
+    </ul>
+</div>

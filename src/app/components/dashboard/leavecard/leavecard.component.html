@@ -1,0 +1,18 @@
+<div class="d-flex">
+    <div *ngFor="let leave of leaveCards">
+        <div class="container">
+            <div >{{leave.leaveType}}</div>
+            <div >
+                <div>Available</div>
+                <div>{{leave.available}}</div>
+                <div>Booked</div>
+                <div>{{leave.booked}}</div>
+            </div>
+        </div>
+    </div>
+    <!-- <div>{{dashboardService.getLeavesSummaryData1()}}</div> -->
+    <button (click)="dashboardService.login('gokul@gmail.com','gokul@123')" >Login</button>
+    <button (click)="dashboardService.getHoliday()" >Get Holidays</button>
+    <button (click)="dashboardService.logout()" >Logout</button>
+    <!-- <app-holidaystable></app-holidaystable> -->
+</div>
