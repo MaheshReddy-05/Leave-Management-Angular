@@ -18,9 +18,28 @@ import { MyteamsummaryComponent } from './components/team/myteamsummary/myteamsu
 import { LoginComponent } from './components/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ApplyleaveComponent } from './components/applyleave/applyleave.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AlldashboardComponent } from './components/alldashboard/alldashboard.component';
 
 
 const routes: Routes = [
+  {
+    path: 'my-data',
+    children: [
+      { path: 'leave-summary', component: AlldashboardComponent },
+      { path: 'leave-requests', component: MyleavestableComponent },
+      { path: '', redirectTo: 'leave-summary', pathMatch: 'full' }
+    ]
+  },
+  {
+    path: 'team',
+    children: [
+      { path: 'team-leaves', component: MyteamleavesComponent },
+      { path: 'team-summary', component: MyteamsummaryComponent },
+      { path: '', redirectTo: 'team-leaves', pathMatch: 'full' }
+    ]
+  },
+
   { path: 'leavessummary', component:LeavecardComponent },
   { path: 'holidays', component:HolidaystableComponent },
   { path: 'recentleaves', component:RecentmyleavesComponent },
@@ -41,7 +60,9 @@ const routes: Routes = [
     MyteamleavesComponent,
     MyteamsummaryComponent,
     LoginComponent,
-    ApplyleaveComponent
+    ApplyleaveComponent,
+    HeaderComponent,
+    AlldashboardComponent
   ],
   imports: [
     BrowserModule,

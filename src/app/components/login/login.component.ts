@@ -21,7 +21,7 @@ export class LoginComponent {
 
   updateProfile(){
     this.loginService.login(this.profileForm.value.email!,this.profileForm.value.password!).subscribe((data)=>{
-      if(data==='Valid') this.router.navigate(['/holidays'])
+      if(data==='Valid') this.router.navigate(['/my-data'])
     })
   }
 }

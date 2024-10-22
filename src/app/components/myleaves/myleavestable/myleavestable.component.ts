@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LeaveService } from '../../../services/leave.service';
 
 @Component({
@@ -6,21 +6,19 @@ import { LeaveService } from '../../../services/leave.service';
   templateUrl: './myleavestable.component.html',
   styleUrl: './myleavestable.component.css'
 })
-export class MyleavestableComponent {
+export class MyleavestableComponent implements OnInit{
   allMyLeaves:any = [];
   
   constructor(private leavesService: LeaveService){}
   
+  ngOnInit(): void {
+    this.getAllMyLeaves();
+  }
+
   getAllMyLeaves(){
     this.leavesService.getAllMyLeaves().subscribe((data)=>{
       console.log(data)
       this.allMyLeaves = data
     })
   }
-
-  // Remove this
-  login(email:string,password:string){
-    this.leavesService.login(email,password).subscribe((data)=> console.log(data))
-  }
-
 }

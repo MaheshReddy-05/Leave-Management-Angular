@@ -1,0 +1,23 @@
+<nav>
+    <ul class="main-nav">
+      <li><a routerLink="/my-data" routerLinkActive="active-link">My Data</a></li>
+      <li><a routerLink="/team" routerLinkActive="active-link">Team</a></li>
+    </ul>
+  </nav>
+  
+  <ng-container *ngIf="isMyDataActive()">
+    <ul class="sub-nav">
+      <li><a routerLink="/my-data/leave-summary" routerLinkActive="active-link">Leave Summary</a></li>
+      <li><a routerLink="/my-data/leave-requests" routerLinkActive="active-link">Leave Requests</a></li>
+    </ul>
+  </ng-container>
+  
+  <ng-container *ngIf="isTeamActive()">
+    <ul class="sub-nav">
+      <li><a routerLink="/team/team-leaves" routerLinkActive="active-link">Team Leaves</a></li>
+      <li><a routerLink="/team/team-summary" routerLinkActive="active-link">Team Summary</a></li>
+    </ul>
+  </ng-container>
+  
+  <router-outlet></router-outlet>
+  

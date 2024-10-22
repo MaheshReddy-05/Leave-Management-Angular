@@ -1,24 +1,57 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+<!-- Button to open the modal -->
+ <div class="text-center">
+
+   <button type="button" class="btn btn-primary w-100" (click)="openModal()">Apply for Leave</button>
+ </div>
+
+<div class="modal fade" id="leaveModal" tabindex="-1" aria-labelledby="leaveModalLabel" aria-hidden="true" #modal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="leaveModalLabel">Apply for Leave</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="leaveForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="leaveType" class="form-label">Leave Type</label>
+            <select class="form-select" id="leaveType" formControlName="leaveType" required>
+              <option *ngIf="gender === 'Male'" value="Compensatory Off">Compensatory Off</option>
+              <option *ngIf="gender === 'Male'" value="Loss of Pay">Loss of Pay</option>
+              <option *ngIf="gender === 'Male'" value="Personal Time Off">Personal Time Off</option>
+              <option *ngIf="gender === 'Male'" value="Paternity Leave">Paternity Leave</option>
+              <option *ngIf="gender === 'Female'" value="Compensatory Off">Compensatory Off</option>
+              <option *ngIf="gender === 'Female'" value="Loss of Pay">Loss of Pay</option>
+              <option *ngIf="gender === 'Female'" value="Personal Time Off">Personal Time Off</option>
+              <option *ngIf="gender === 'Female'" value="Maternity Leave">Maternity Leave</option>
+            </select>
+          </div>
+
+          <!-- Reason Input -->
+          <div class="mb-3">
+            <label for="reason" class="form-label">Reason</label>
+            <input type="text" class="form-control" id="reason" formControlName="reason" placeholder="Enter reason" required>
+          </div>
+
+          <!-- From Date -->
+          <div class="mb-3">
+            <label for="fromDate" class="form-label">From Date</label>
+            <input type="date" class="form-control" id="fromDate" formControlName="fromDate" required>
+          </div>
+
+          <!-- To Date -->
+          <div class="mb-3">
+            <label for="toDate" class="form-label">To Date</label>
+            <input type="date" class="form-control" id="toDate" formControlName="toDate" required>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="!leaveForm.valid">Submit</button>
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>

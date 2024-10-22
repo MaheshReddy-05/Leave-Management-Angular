@@ -29,13 +29,11 @@ export class LeavecardComponent implements OnInit {
     employeeName: "Blah",
     employeeGender : "Female"
   }
-
-  
-  
   constructor(public dashboardService: DashboardService){
   }
 
   ngOnInit(): void {
+    this.getGender()
   }
   
   login(email:string,password:string){
@@ -47,20 +45,22 @@ export class LeavecardComponent implements OnInit {
       {
         next: (data)=> {
           this.leaveCards = data;
-          console.log(data)
         }
       }
     )
   }
-  getGender(){
-    this.dashboardService.getGender().subscribe((data)=>{
+  getGender() {
+    this.dashboardService.getGender().subscribe(
+        {
+           next: x => { let genderName: Array<string> = x.split(" ");
+            this.employeeDetails.employeeGender = genderName[0];
+            this.employeeDetails.employeeName = genderName[1];},
+          error: err => console.error('Observer got an error: ' + err),
+          complete: () => this.getLeaveSummary(),
+        }
+    );
+}
 
-      let genderName: Array<string> = data.split(" ");
-      this.employeeDetails.employeeGender = genderName[0];
-      this.employeeDetails.employeeName = genderName[1];
-    }
-    )
-  }
 
 
   

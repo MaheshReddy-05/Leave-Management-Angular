@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DashboardService } from '../../../services/dashboard.service';
   templateUrl: './recentmyleaves.component.html',
   styleUrl: './recentmyleaves.component.css'
 })
-export class RecentmyleavesComponent {
+export class RecentmyleavesComponent implements OnInit{
   constructor(private dashboardService: DashboardService){}
 
   // {
@@ -16,8 +16,12 @@ export class RecentmyleavesComponent {
   //   toDate:'Blah',
   //   leaveCount:'Blah'
   // }
+  topFourLeaves:any;
+  
+  ngOnInit(): void {
+    this.getTopFourLeaves();
+  }
 
-  topFourLeaves:any = [];
   getTopFourLeaves(){
     this.dashboardService.getTopFourApprovedLeaves().subscribe((data)=>{
       this.topFourLeaves = data;
