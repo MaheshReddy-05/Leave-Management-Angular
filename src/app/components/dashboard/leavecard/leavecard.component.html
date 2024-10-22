@@ -1,18 +1,56 @@
-<div class="d-flex">
-    <div *ngFor="let leave of leaveCards">
-        <div class="container">
-            <div >{{leave.leaveType}}</div>
+<div class="d-flex" >
+        <div class="container text-center summary-card">
+                <h4>Compensatory Off</h4>
+                <div>
+                    <div>Available</div>
+                    <h5>{{5}}</h5>
+                    <div>Booked</div>
+                    <h5>{{leaveCards.compensatoryOff}}</h5>
+                </div>
+        </div>
+        <div class="container text-center summary-card">
+            <h4 >Loss Off Pay</h4>
             <div >
                 <div>Available</div>
-                <div>{{leave.available}}</div>
+                <h5>{{5}}</h5>
                 <div>Booked</div>
-                <div>{{leave.booked}}</div>
+                <h5>{{leaveCards.lossOffPay}}</h5>
             </div>
         </div>
-    </div>
+        <div class="container text-center summary-card">
+            <h4 >Personal Time Off</h4>
+            <div >
+                <div>Available</div>
+                <h5>{{15}}</h5>
+                <div>Booked</div>
+                <h5>{{leaveCards.personalTimeOff}}</h5>
+            </div>
+        </div>
+
+        <div *ngIf="employeeDetails.employeeGender==='Male'" class="container text-center summary-card">
+            <h4 >Paternity Leave</h4>
+            <div >
+                <div>Available</div>
+                <h5>{{9}}</h5>
+                <div>Booked</div>
+                <h5>{{leaveCards.paternityLeave}}</h5>
+            </div>
+        </div>
+        <div *ngIf="employeeDetails.employeeGender==='Female'" class="container text-center summary-card">
+            <h4 >Maternity Leave</h4>
+            <div >
+                <div>Available</div>
+                <h5>{{90}}</h5>
+                <div>Booked</div>
+                <h5>{{leaveCards.maternityLeave}}</h5>
+            </div>
+        </div>
+
+        
+    <!-- </div> -->
     <!-- <div>{{dashboardService.getLeavesSummaryData1()}}</div> -->
-    <button (click)="dashboardService.login('gokul@gmail.com','gokul@123')" >Login</button>
-    <button (click)="dashboardService.getHoliday()" >Get Holidays</button>
-    <button (click)="dashboardService.logout()" >Logout</button>
+    <button class="btn btn-primary summary-card text-dark" (click)="getLeaveSummary()" >Get Leave Summary</button>
+    <button class="btn btn-primary summary-card text-dark" (click)="login('ruthvik@gmail.com','ruthvik@123')" >Login</button>
+    <button class="btn btn-primary summary-card text-dark" (click)="getGender()" >Gender Update</button>
     <!-- <app-holidaystable></app-holidaystable> -->
 </div>

@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center">
+    <div class="">
+        <form [formGroup]="profileForm">
+            <h2 class="text-center">Login</h2>
+            <label for="">Email Address</label> <br>
+            <input type="email" formControlName="email"> <br>
+        
+            <label for="">password</label> <br>
+            <input type="password" formControlName="password">
+        </form>
+        <br>
+        <div class="text-center ">
+            <div>
+                <button class="btn btn-primary container" (click)="updateProfile()">Sign In</button>
+            </div>
+        </div>
+    </div>
+</div>

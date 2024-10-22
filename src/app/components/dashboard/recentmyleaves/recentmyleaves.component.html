@@ -1,1 +1,25 @@
-<p>recentmyleaves works!</p>
+<div >
+    <button class="btn btn-primary" (click)="login('ruthvik@gmail.com','ruthvik@123')">login</button>
+    <button class="btn btn-primary" (click)="getTopFourLeaves()">Get Leaves</button>
+    <h2 >Recent Leaves</h2>
+    <table class="container text-center">
+        <thead>
+            <tr class="bg-primary">
+                <th>Leave Type</th>
+                <th>Reason</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Leave Count</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let leave of topFourLeaves" >
+                <td>{{leave.leaveType}}</td>
+                <td>{{leave.reason}}</td>
+                <td>{{leave.fromDate}}</td>
+                <td>{{leave.toDate}}</td>
+                <td>{{leave.leaveCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard.service';
 
 @Component({
@@ -6,12 +6,19 @@ import { DashboardService } from '../../../services/dashboard.service';
   templateUrl: './holidaystable.component.html',
   styleUrl: './holidaystable.component.css'
 })
-export class HolidaystableComponent {
+export class HolidaystableComponent implements OnInit{
 
+  holidays:any = [];
   constructor(private dashboardService:DashboardService){}
 
-  getHolidays(){
-    return this.dashboardService.getHoliday();
+  ngOnInit(): void {
+    this.getHolidays();
+  }
+
+  getHolidays():any{
+    this.dashboardService.getHoliday().subscribe((data)=>{
+      this.holidays = data
+    })
   }
 
 }

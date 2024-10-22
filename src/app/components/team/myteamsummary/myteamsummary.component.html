@@ -1,0 +1,31 @@
+<button class="btn btn-primary" (click)="login('lokesh@gmail.com','lokesh@123')">login</button>
+<button class="btn btn-primary"  (click)="getTeamLeaveSummary()">Get Team leave Summary</button>
+
+
+<div class=" d-flex justify-content-around text-center">
+    
+    <div *ngFor="let member of teamLeaveSummary">
+            <h4>{{member.employeeName}}</h4>
+            <div>
+                <span class="">Compensatory Off: </span>
+                <span class="">{{member.compensatoryOff}}/5</span>
+            </div>
+            <div>
+                <span class="">Loss of Pay: </span>
+                <span class="">{{member.lossOffPay}}/5</span>
+            </div>
+            <div>
+                <span class="">Personal Time Off:  </span>
+                <span class="">{{member.personalTimeOff}}/15</span>
+            </div>
+            <!-- {{member.gender}} -->
+            <div *ngIf="member.gender.startsWith('Female')">
+                <span class="">Maternity Leave: </span>
+                <span class="">{{member.maternityLeave}}/90</span>
+            </div>
+            <div *ngIf="member.gender.startsWith('Male')">
+                <span class="">Paternity Leave: </span>
+                <span class="">{{member.paternityLeave}}/9</span>
+            </div>
+    </div>
+</div>

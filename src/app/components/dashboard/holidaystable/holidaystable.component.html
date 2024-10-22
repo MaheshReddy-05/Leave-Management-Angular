@@ -1,11 +1,13 @@
-<div>
-    <h1>Upcomming Leaves & Holidays</h1>
-    <ul *ngFor="let holidays of getHolidays()">
-        <div>
-            <li>
+<div class="container">
+    <button class="btn btn-primary " (click)="getHolidays()">Get Holidays</button>
+    <h1 class="">Upcomming Leaves & Holidays</h1>
+    <ul *ngFor="let holidays of holidays" class="border-bottom border-primary border-1 opacity-75">
+        <div >
+            <li class="d-flex justify-content-between">
                 <span>{{holidays.holidayDate}}</span>
                 <span>{{holidays.holidayName}}</span>
             </li>
         </div>
     </ul>
+
 </div>

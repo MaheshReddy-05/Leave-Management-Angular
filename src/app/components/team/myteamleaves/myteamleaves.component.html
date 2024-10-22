@@ -1,25 +1,29 @@
 <div >
-    <button class="btn btn-primary" (click)="login('ruthvik@gmail.com','ruthvik@123')">login</button>
-    <button class="btn btn-primary" (click)="getAllMyLeaves()">Get Leaves</button>
+    <button class="btn btn-primary" (click)="login('lokesh@gmail.com','lokesh@123')">login</button>
+    <button class="btn btn-primary" (click)="getMyTeamLeaves()">Get Team Leaves</button>
     <h2 >Leave Requests</h2>
     <table class="container text-center">
-        <thead>
-            <tr class="bg-primary">
+        <thead class="bg-primary">
+            <tr>
+                <th>Name</th>
                 <th>Leave Type</th>
                 <th>Reason</th>
                 <th>From Date</th>
                 <th>To Date</th>
                 <th>Leave Count</th>
+                <th>Applied On</th>
                 <th>Status</th>
             </tr>
         </thead>
         <tbody >
-            <tr *ngFor="let leave of allMyLeaves">
+            <tr *ngFor="let leave of teamLeaveRequests">
+                <td>{{leave.employeeName}}</td>
                 <td>{{leave.leaveType}}</td>
                 <td>{{leave.reason}}</td>
                 <td>{{leave.fromDate}}</td>
                 <td>{{leave.toDate}}</td>
                 <td>{{leave.leaveCount}}</td>
+                <td>{{leave.createdAt}}</td>
                 <td>{{leave.status}}</td>
             </tr>
         </tbody>

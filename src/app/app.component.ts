@@ -11,12 +11,5 @@ export class AppComponent {
 
   constructor(public prv: DashboardService){}
 
-  check = false;
-  login(email:string,password:string){
-    if(this.prv.login(email,password)==='Valid'){
-      this.check = true;
-    }
-  }
-
   
 }

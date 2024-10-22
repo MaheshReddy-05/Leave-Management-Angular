@@ -1,0 +1,25 @@
+import { Component } from '@angular/core';
+import { LeaveService } from '../../../services/leave.service';
+
+@Component({
+  selector: 'app-myteamleaves',
+  templateUrl: './myteamleaves.component.html',
+  styleUrl: './myteamleaves.component.css'
+})
+export class MyteamleavesComponent {
+
+  teamLeaveRequests:any = [];
+  constructor(private leaveService: LeaveService){}
+
+  getMyTeamLeaves(){
+    this.leaveService.getAllLeavesAsManager().subscribe((data)=>{
+      console.log(data);
+      this.teamLeaveRequests = data;
+    })
+  }
+  login(email:string,password:string){
+    this.leaveService.login(email,password).subscribe((data)=>
+    console.log(data))
+  }
+
+}
