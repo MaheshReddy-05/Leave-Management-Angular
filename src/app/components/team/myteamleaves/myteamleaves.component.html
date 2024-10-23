@@ -23,10 +23,16 @@
                 <td>{{leave.leaveCount}}</td>
                 <td>{{leave.createdAt}}</td>
                 <td>
-
                     <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
-                    <img *ngIf="leave.status==='Pending'"  src="assets/images/alert.png" alt="" height="40px">
-                    <img *ngIf="leave.status==='Rejected'" src="assets/images/reject.png" alt="" height="40px">
+                    <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="40px">
+                    <div *ngIf="leave.status==='Pending'">
+                        <a href="#">
+                            <img src="assets/images/check-mark.png" alt="" height="40px">
+                        </a>
+                        <a href="#">
+                            <img src="assets/images/multiplication.png" alt="" height="24px">
+                        </a>
+                    </div>
                 </td>
             </tr>
         </tbody>

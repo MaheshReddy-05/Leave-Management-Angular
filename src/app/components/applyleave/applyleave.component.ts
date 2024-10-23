@@ -73,6 +73,7 @@ export class ApplyleaveComponent implements OnInit {
       const finalFormData = { ...formData, ...customData };
       this.leaveService.applyLeave(finalFormData).subscribe((data)=>{
         console.log(data);
+        this.closeModal();
       })
     }
   }
