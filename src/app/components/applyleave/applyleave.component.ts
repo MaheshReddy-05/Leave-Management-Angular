@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { LeaveService } from '../../services/leave.service';
 
 @Component({
   selector: 'app-applyleave',
@@ -17,7 +17,7 @@ export class ApplyleaveComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private http: HttpClient,
+    private leaveService: LeaveService
   ) {}
 
   ngOnInit(): void {
@@ -45,19 +45,35 @@ export class ApplyleaveComponent implements OnInit {
       this.bootstrapModal.hide();
     }
   }
+  getWeekdays(fromDate:any, toDate:any) {
 
+    const start = new Date(fromDate);
+    const end = new Date(toDate);
+    let leaveCount = 0;
+
+    while (start <= end) {
+        // Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+        const dayOfWeek = start.getDay();
+        if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+            leaveCount++;
+        }
+        start.setDate(start.getDate() + 1);
+    }
+
+    return leaveCount;
+}
   onSubmit(): void {
     if (this.leaveForm.valid) {
-      const formData = this.leaveForm.value;
-      this.http.post('blah/blah', formData).subscribe(
-        response => {
-          console.log('Form submitted successfully', response);
-          this.closeModal(); 
-        },
-        error => {
-          console.error('Error submitting form', error);
-        }
-      );
+      let formData = this.leaveForm.value;
+      const customData = {
+        leaveCount: this.getWeekdays(formData.fromDate, formData.toDate),
+        createdAt: new Date().toISOString().split('T')[0],  // format date as YYYY-MM-DD
+        status: 'Pending'
+      };
+      const finalFormData = { ...formData, ...customData };
+      this.leaveService.applyLeave(finalFormData).subscribe((data)=>{
+        console.log(data);
+      })
     }
   }
 }

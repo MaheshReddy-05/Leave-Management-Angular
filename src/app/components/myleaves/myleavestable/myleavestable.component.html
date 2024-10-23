@@ -18,7 +18,11 @@
                 <td>{{leave.fromDate}}</td>
                 <td>{{leave.toDate}}</td>
                 <td>{{leave.leaveCount}}</td>
-                <td>{{leave.status}}</td>
+                <td>
+                    <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
+                    <img *ngIf="leave.status==='Pending'"  src="assets/images/alert.png" alt="" height="40px">
+                    <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="36px">
+                </td>
             </tr>
         </tbody>
     </table>
