@@ -1,4 +1,4 @@
-<!-- Button to open the modal -->
+
  <div class="text-center">
 
    <button type="button" class="btn btn-primary w-100" (click)="openModal()">Apply for Leave</button>
@@ -27,25 +27,21 @@
             </select>
           </div>
 
-          <!-- Reason Input -->
           <div class="mb-3">
             <label for="reason" class="form-label">Reason</label>
             <input type="text" class="form-control" id="reason" formControlName="reason" placeholder="Enter reason" required>
           </div>
 
-          <!-- From Date -->
           <div class="mb-3">
             <label for="fromDate" class="form-label">From Date</label>
             <input type="date" class="form-control" id="fromDate" formControlName="fromDate" required>
           </div>
 
-          <!-- To Date -->
           <div class="mb-3">
             <label for="toDate" class="form-label">To Date</label>
             <input type="date" class="form-control" id="toDate" formControlName="toDate" required>
           </div>
 
-          <!-- Submit Button -->
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" [disabled]="!leaveForm.valid">Submit</button>
             <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>

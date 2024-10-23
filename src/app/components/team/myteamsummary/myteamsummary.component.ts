@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LeaveService } from '../../../services/leave.service';
 
 @Component({
@@ -6,33 +6,19 @@ import { LeaveService } from '../../../services/leave.service';
   templateUrl: './myteamsummary.component.html',
   styleUrl: './myteamsummary.component.css'
 })
-export class MyteamsummaryComponent {
+export class MyteamsummaryComponent implements OnInit{
+  teamLeaveSummary:any =[];
+  constructor(private leaveService: LeaveService){
+  }
 
-  teamLeaveSummary:any;
-
-  constructor(private leaveService: LeaveService){}
+  ngOnInit(): void {
+    this.getTeamLeaveSummary();
+  }
+  
   getTeamLeaveSummary(){
     this.leaveService.getLeaveSummaryAsManager().subscribe((data)=>{
+      console.log(data)
       this.teamLeaveSummary = data;
     })
   }
-
-  // Temp Remove
-  login(email:string,password:string){
-    this.leaveService.login(email,password).subscribe((data)=>
-      console.log(data)
-    )
-  }
 }
-
-// name: member.employeeName,
-// compensatoryOffAllowed: 5, 
-// compensatoryOffTaken: member.compensatoryOff,
-// lossOfPayAllowed: 5,
-// lossOfPayTaken: member.lossOffPay,
-// personalTimeOffAllowed: 15,
-// personalTimeOffTaken: member.personalTimeOff,
-// gender: member.gender,
-// maternityLeaveTaken: member.gender === 'Female' ? member.maternityLeave : null,
-// paternityLeaveTaken: member.gender === 'Male' ? member.paternityLeave : null
-// };

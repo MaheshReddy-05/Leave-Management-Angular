@@ -39,8 +39,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'team-leaves', pathMatch: 'full' }
     ]
   },
-
-  { path: 'leavessummary', component:LeavecardComponent },
+  { path: '**', component:LoginComponent  },
+  { path: 'leavessummary', component:LeavecardComponent  },
   { path: 'holidays', component:HolidaystableComponent },
   { path: 'recentleaves', component:RecentmyleavesComponent },
   { path: 'myallleaves', component:MyleavestableComponent },
@@ -70,7 +70,6 @@ const routes: Routes = [
     TooltipModule.forRoot(),
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
-    // HttpClientModule
 
   ],
   providers: [

@@ -7,7 +7,10 @@ import { DashboardService } from '../../../services/dashboard.service';
   styleUrl: './recentmyleaves.component.css'
 })
 export class RecentmyleavesComponent implements OnInit{
-  constructor(private dashboardService: DashboardService){}
+  constructor(private dashboardService: DashboardService){
+
+    this.getTopFourLeaves();
+  }
 
   // {
   //   leaveType:'PTO',
@@ -19,7 +22,6 @@ export class RecentmyleavesComponent implements OnInit{
   topFourLeaves:any;
   
   ngOnInit(): void {
-    this.getTopFourLeaves();
   }
 
   getTopFourLeaves(){

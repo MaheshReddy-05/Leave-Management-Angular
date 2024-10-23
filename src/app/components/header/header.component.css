@@ -1,20 +1,29 @@
 
-.main-nav, .sub-nav {
+.main-nav {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 20px;
-    background-color: #2c3e50;
-    padding: 10px 20px;
-    border-bottom: 2px solid #ddd;
+    gap: 24px;
+    background-color: #0a65cc;
+    padding: 16px 20px;
+    color: black;
   }
-  
+  .sub-nav{
+    color: black;
+  }
   .main-nav li, .sub-nav li {
     display: inline;
   }
   
-  .main-nav a, .sub-nav a {
+  .main-nav a  {
     color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+  .sub-nav a{
+    color: black;
     text-decoration: none;
     font-weight: 600;
     padding: 8px 12px;
@@ -22,13 +31,13 @@
   }
   
   .main-nav a:hover, .sub-nav a:hover {
-    text-decoration: underline;
-    color: #1abc9c;
+    text-decoration: none;
   }
   
-  .active-link {
-    border-bottom: 2px solid #1abc9c;
-    color: #1abc9c; 
+  .main-nav .active-link {
+    color: black;
+    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid #e74c3c; */
   }
   
   .sub-nav {
@@ -37,7 +46,7 @@
   }
   
   .sub-nav a {
-    color: #34495e;
+    color: black;
     font-size: 14px;
   }
   

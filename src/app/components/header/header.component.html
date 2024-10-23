@@ -1,8 +1,25 @@
 <nav>
-    <ul class="main-nav">
-      <li><a routerLink="/my-data" routerLinkActive="active-link">My Data</a></li>
-      <li><a routerLink="/team" routerLinkActive="active-link">Team</a></li>
-    </ul>
+    <div class="d-flex justify-content-between main-nav">
+      <div class="d-flex justify-content-between">
+        <div class="" style="margin-left: 10px;"><a routerLink="/my-data" routerLinkActive="active-link">My Data</a></div>
+        <div  style="margin-left: 10px;"><a routerLink="/team" routerLinkActive="active-link">Team</a></div>
+      </div>
+      <div class="">
+        <div>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Dropdown links
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
   
   <ng-container *ngIf="isMyDataActive()">
@@ -18,6 +35,7 @@
       <li><a routerLink="/team/team-summary" routerLinkActive="active-link">Team Summary</a></li>
     </ul>
   </ng-container>
+
   
   <router-outlet></router-outlet>
   
