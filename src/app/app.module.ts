@@ -20,7 +20,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ApplyleaveComponent } from './components/applyleave/applyleave.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AlldashboardComponent } from './components/alldashboard/alldashboard.component';
-
+import { LeaveactionssummaryComponent } from './components/team/leaveactionssummary/leaveactionssummary.component';
 
 const routes: Routes = [
   {
@@ -39,16 +39,18 @@ const routes: Routes = [
       { path: '', redirectTo: 'team-leaves', pathMatch: 'full' }
     ]
   },
-  { path: '**', component:LoginComponent  },
-  { path: 'leavessummary', component:LeavecardComponent  },
-  { path: 'holidays', component:HolidaystableComponent },
-  { path: 'recentleaves', component:RecentmyleavesComponent },
-  { path: 'myallleaves', component:MyleavestableComponent },
-  { path: 'myteamleaves', component:MyteamleavesComponent },
-  { path: 'myteamleavessummary', component:MyteamsummaryComponent },
-  { path: 'login', component:LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  { path: '', redirectTo:'login', pathMatch: 'full'},
+  { path: '**', redirectTo:'login', pathMatch: 'full'},
 
 ];
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ const routes: Routes = [
     LoginComponent,
     ApplyleaveComponent,
     HeaderComponent,
-    AlldashboardComponent
+    AlldashboardComponent,
+    LeaveactionssummaryComponent,
   ],
   imports: [
     BrowserModule,

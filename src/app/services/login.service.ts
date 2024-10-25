@@ -11,7 +11,7 @@ export class LoginService {
 
   private loginApiUrl = 'http://localhost:8080/LeaveManagement/login'
   dataa:string = "";
-
+  
  login(email: string, password: string):Observable<any> {
      const body = { email, password };
      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });

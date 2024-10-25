@@ -42,7 +42,10 @@ export class LeaveService {
 
   }
   
-  updateLeaveAsManager(){
+  updateLeaveAsManager(leaveId:number,leaveStatus:string){
+    const body = {leaveId:leaveId,status:leaveStatus};
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.put<any>('http://localhost:8080/LeaveManagement/employees',body,{ headers, withCredentials:true});
 
   }
 

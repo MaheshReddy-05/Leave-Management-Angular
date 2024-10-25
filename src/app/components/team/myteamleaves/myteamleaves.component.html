@@ -1,7 +1,7 @@
-<div class="custom-ml">
+<div class="custom-ml" style="margin-top: 20px; padding-top: 20px;">
     <h2 >Leave Requests</h2>
     <table class="w-100 text-center">
-        <thead class="bg-primary">
+        <thead class="" style="background-color: #2274d1;">
             <tr>
                 <th>Name</th>
                 <th>Leave Type</th>
@@ -10,7 +10,20 @@
                 <th>To Date</th>
                 <th>Leave Count</th>
                 <th>Applied On</th>
-                <th>Status</th>
+                <th>
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Status
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Approved</a></li>
+                          <li><a class="dropdown-item" href="#">Pending</a></li>
+                          <li><a class="dropdown-item" href="#">Rejected</a></li>
+                        </ul>
+                      </div>
+                </th>
+                <th>Dummy Column</th>
             </tr>
         </thead>
         <tbody >
@@ -23,18 +36,61 @@
                 <td>{{leave.leaveCount}}</td>
                 <td>{{leave.createdAt}}</td>
                 <td>
-                    <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
-                    <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="40px">
+                     <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
+                    <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px">
                     <div *ngIf="leave.status==='Pending'">
-                        <a href="#">
+                        <a  (click)="updateLeaveStatus(leave.leaveId,'Approved')">
                             <img src="assets/images/check-mark.png" alt="" height="40px">
                         </a>
-                        <a href="#">
+                        <a (click)="updateLeaveStatus(leave.leaveId,'Rejected')">
                             <img src="assets/images/multiplication.png" alt="" height="24px">
                         </a>
                     </div>
                 </td>
+                <td> <a (click)="openModal()">Check Modal</a></td>
             </tr>
         </tbody>
     </table>
 </div>
+
+
+<div class="modal fade" id="leaveModal" tabindex="-1" aria-labelledby="leaveModalLabel" aria-hidden="true" #modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="leaveModalLabel">Employee Leave Data</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container text-center summary-card">
+                <!-- <h4>{{}}</h4> -->
+                <div>
+                    <span class="">Compensatory Off: </span>
+                    <span class="">{{0}}/5</span>
+                </div>
+                <div>
+                    <span class="">Loss of Pay: </span>
+                    <span class="">{{0}}/5</span>
+                </div>
+                <div>
+                    <span class="">Personal Time Off: </span>
+                    <span class="">{{0}}/15</span>
+                </div>
+                <!-- {{member.gender}} -->
+                <!-- <div *ngIf="member.gender.startsWith('Female')">
+                    <span class="">Maternity Leave: </span>
+                    <span class="">{{member.maternityLeave}}/90</span>
+                </div>
+                <div *ngIf="member.gender.startsWith('Male')">
+                    <span class="">Paternity Leave: </span>
+                    <span class="">{{member.paternityLeave}}/9</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Approve</button>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -1,6 +1,8 @@
-<main class="">
-    <!-- <app-leavecard></app-leavecard> -->
-     <!-- <app-holidaystable></app-holidaystable> -->
-      <app-header></app-header>
-      <router-outlet></router-outlet>
+<main>
+  <!-- Conditionally display the header only if `showHeader` is true -->
+   <!-- {{hello()}} -->
+<app-header *ngIf="showHeader"></app-header>
+
+    <router-outlet></router-outlet>
 </main>
+  

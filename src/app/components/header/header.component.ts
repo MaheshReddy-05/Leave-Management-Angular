@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,11 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  
+  constructor(private router: Router,private dashboardService:DashboardService) {
+    
+  }
+
 
   isMyDataActive(): boolean {
     return this.router.url.startsWith('/my-data');

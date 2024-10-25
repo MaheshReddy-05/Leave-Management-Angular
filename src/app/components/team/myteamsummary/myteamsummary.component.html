@@ -1,29 +1,31 @@
 <div class="custom-ml">
 
-    <div class=" d-flex justify-content-around text-center">
+    <div class=" d-flex justify-content-around text-center" style="margin-top: 20px; padding-top: 20px;">
 
         <div *ngFor="let member of teamLeaveSummary">
-            <h4>{{member.employeeName}}</h4>
-            <div>
-                <span class="">Compensatory Off: </span>
-                <span class="">{{member.compensatoryOff}}/5</span>
-            </div>
-            <div>
-                <span class="">Loss of Pay: </span>
-                <span class="">{{member.lossOffPay}}/5</span>
-            </div>
-            <div>
-                <span class="">Personal Time Off: </span>
-                <span class="">{{member.personalTimeOff}}/15</span>
-            </div>
-            <!-- {{member.gender}} -->
-            <div *ngIf="member.gender.startsWith('Female')">
-                <span class="">Maternity Leave: </span>
-                <span class="">{{member.maternityLeave}}/90</span>
-            </div>
-            <div *ngIf="member.gender.startsWith('Male')">
-                <span class="">Paternity Leave: </span>
-                <span class="">{{member.paternityLeave}}/9</span>
+            <div class="container text-center summary-card">
+                <h4>{{member.employeeName}}</h4>
+                <div>
+                    <span class="">Compensatory Off: </span>
+                    <span class="">{{member.compensatoryOff}}/5</span>
+                </div>
+                <div>
+                    <span class="">Loss of Pay: </span>
+                    <span class="">{{member.lossOffPay}}/5</span>
+                </div>
+                <div>
+                    <span class="">Personal Time Off: </span>
+                    <span class="">{{member.personalTimeOff}}/15</span>
+                </div>
+                <!-- {{member.gender}} -->
+                <div *ngIf="member.gender.startsWith('Female')">
+                    <span class="">Maternity Leave: </span>
+                    <span class="">{{member.maternityLeave}}/90</span>
+                </div>
+                <div *ngIf="member.gender.startsWith('Male')">
+                    <span class="">Paternity Leave: </span>
+                    <span class="">{{member.paternityLeave}}/9</span>
+                </div>
             </div>
         </div>
     </div>

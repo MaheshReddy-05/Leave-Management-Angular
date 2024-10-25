@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,45 +14,43 @@ export class DashboardService {
   private holidaysApiUrl = 'http://localhost:8080/LeaveManagement/holidays';
   private recentFourLeavesApiUrl = 'http://localhost:8080/LeaveManagement/recent_leaves';
   private logoutApiUrl = 'http://localhost:8080/LeaveManagement/logout';
-  
-  
-  constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<string> {
+  // private dashboardStateSubject = new BehaviorSubject<boolean>(true);
+
+  constructor(private http: HttpClient) {}
+
+  // getDashboardState(): Observable<boolean> {
+  //   return this.dashboardStateSubject.asObservable();
+  // }
+
+
+  login(email: string, password: string): Observable<any> {
     const body = { email, password };
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
     return this.http.post<any>(this.apiUrl, body, { headers, withCredentials: true });
-
   }
-  
-  
+
   ddoEmployeeHadTeam(): Observable<boolean> {
     return this.http.get<any>(this.employeeHadTeamApiUrl, { withCredentials: true })
-      .pipe(
-        map((response: any) => {
-          return response === 'true';
-        })
-      );
   }
 
-  getGender():Observable<string>{
-    return this.http.get<any>(this.employeeGenderApiUrl,{withCredentials:true})
+  getGender(): Observable<string> {
+    return this.http.get<any>(this.employeeGenderApiUrl, { withCredentials: true });
   }
 
-  getLeaveSummary():Observable<any>{
-    return this.http.get<any>(this.leaveSummaryApiUrl,{withCredentials:true});
+  getLeaveSummary(): Observable<any> {
+    return this.http.get<any>(this.leaveSummaryApiUrl, { withCredentials: true });
   }
 
-  getHoliday():Observable<any> {
+  getHoliday(): Observable<any> {
     return this.http.get<any>(this.holidaysApiUrl, { withCredentials: true });
   }
 
-  getTopFourApprovedLeaves():Observable<any>{
-    return this.http.get<any>(this.recentFourLeavesApiUrl,{withCredentials:true})
+  getTopFourApprovedLeaves(): Observable<any> {
+    return this.http.get<any>(this.recentFourLeavesApiUrl, { withCredentials: true });
   }
 
-  logout():Observable<any>{
-    return this.http.post(this.logoutApiUrl,{withCredientials:true});
+  logout(): Observable<any> {
+    return this.http.post(this.logoutApiUrl, {}, { withCredentials: true });
   }
 }
