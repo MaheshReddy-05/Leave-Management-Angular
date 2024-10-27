@@ -1,22 +1,22 @@
-<div >
-    <h2 >Recent Leaves</h2>
-    <table class="w-100 ">
+<div class="cus-card h-100">
+    <h2 class="cus-h1">Recent Leaves</h2>
+    <table class="w-100">
         <thead>
-            <tr class="" style="background-color: #2274d1;">
+            <tr style="background: linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white;">
                 <th>Leave Type</th>
                 <th>Reason</th>
-                <th>From Date</th>
-                <th>To Date</th>
-                <th>Leave Count</th>
+                <th class="text-center">From Date</th>
+                <th class="text-center">To Date</th>
+                <th class="text-center">Leave Count</th>
             </tr>
         </thead>
-        <tbody >
-            <tr *ngFor="let leave of topFourLeaves" >
+        <tbody>
+            <tr *ngFor="let leave of topFourLeaves" class="cus-h2 cus-table-border">
                 <td>{{leave.leaveType}}</td>
                 <td>{{leave.reason}}</td>
-                <td>{{leave.fromDate}}</td>
-                <td>{{leave.toDate}}</td>
-                <td>{{leave.leaveCount}}</td>
+                <td class="text-center">{{leave.fromDate}}</td>
+                <td class="text-center">{{leave.toDate}}</td>
+                <td class="text-center">{{leave.leaveCount}}</td>
             </tr>
         </tbody>
     </table>

@@ -1,39 +1,53 @@
-<nav>
+<nav style="padding-left: 10rem; padding-right: 10rem;">
     <div class="d-flex justify-content-between main-nav">
+      <div>
+        <div class="d-flex">
+          
+          <img src="https://img.icons8.com/?size=100&id=99333&format=png&color=FFFFFF" alt="" height="36px">
+          <div class="h-100" style="padding-left: 12px; padding-top: 4px;">
+            Leave Management
+          </div> 
+        </div>
+      </div>
       <div class="d-flex justify-content-between">
         <div class="" style="margin-left: 10px;"><a routerLink="/my-data" routerLinkActive="active-link">My Data</a></div>
         <div  style="margin-left: 10px;"><a routerLink="/team" routerLinkActive="active-link">Team</a></div>
       </div>
       <div class="">
         <div>
-          <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Dropdown links
+          <div class="dropdown">
+            <a class="btn dropdown-toggle " style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gokul Raj
             </a>
-          
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
+            
+            <ul class="dropdown-menu cus-card" >
+                <li><a class="dropdown-item " style="color: rgb(255, 145, 105);" href="#">Leaves</a></li>
+                <li><a class="dropdown-item"  style="color: rgb(255, 145, 105);" href="#">Requests</a></li>
+                <li><a class="dropdown-item" style="color: rgb(255, 145, 105);" href="#">Logout</a></li>
+            </ul>
+        </div>
         </div>
       </div>
     </div>
   </nav>
-  
-  <ng-container *ngIf="isMyDataActive()">
-    <ul class="sub-nav">
-      <li><a routerLink="/my-data/leave-summary" routerLinkActive="active-link">Leave Summary</a></li>
-      <li><a routerLink="/my-data/leave-requests" routerLinkActive="active-link">Leave Requests</a></li>
-    </ul>
-  </ng-container>
-  
-  <ng-container *ngIf="isTeamActive()">
-    <ul class="sub-nav">
-      <li><a routerLink="/team/team-leaves" routerLinkActive="active-link">Team Leaves</a></li>
-      <li><a routerLink="/team/team-summary" routerLinkActive="active-link">Team Summary</a></li>
-    </ul>
-  </ng-container>
+  <!-- <div style="background-color: #dee2f9; padding: 6px;" > -->
+    <div style="margin-left: 10rem;">
+
+      
+      <ng-container *ngIf="isMyDataActive()">
+        <ul class="sub-nav">
+          <li><a routerLink="/my-data/leave-summary" routerLinkActive="active-link">Leave Summary</a></li>
+          <li><a routerLink="/my-data/leave-requests" routerLinkActive="active-link">Leave Requests</a></li>
+        </ul>
+      </ng-container>
+      
+      <ng-container *ngIf="isTeamActive()">
+        <ul class="sub-nav">
+          <li><a routerLink="/team/team-leaves" routerLinkActive="active-link">Team Leaves</a></li>
+          <li><a routerLink="/team/team-summary" routerLinkActive="active-link">Team Summary</a></li>
+        </ul>
+      </ng-container>
+    </div>
+  <!-- </div> -->
   <!-- <router-outlet></router-outlet> -->
   

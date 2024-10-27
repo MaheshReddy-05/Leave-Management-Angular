@@ -1,10 +1,31 @@
-<div class="custom-ml" style="margin-top: 20px; padding-top: 20px;">
+<div class="custom-ml" style="margin-top: 20px; padding-top: 20px; background-color: #0b0c14;">
+   
     <app-leavecard></app-leavecard>
     <app-applyleave ></app-applyleave>
-    <app-holidaystable></app-holidaystable>
-    <app-recentmyleaves></app-recentmyleaves>
+    <div class="container" style="">
+        <div class="row">
+            <div class="col-4">
+                <app-holidaystable></app-holidaystable>
+            </div>
+            <div class="col-8" >
+                <app-recentmyleaves></app-recentmyleaves>
+            </div>
+        </div>
+    </div>
 </div>
 
+
+<!-- <div class="dropdown">
+    <a class="btn dropdown-toggle " style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Status
+    </a>
+    
+    <ul class="dropdown-menu cus-card" >
+        <li><a class="dropdown-item " style="color: rgb(255, 145, 105);" href="#">Approved</a></li>
+        <li><a class="dropdown-item"  style="color: rgb(255, 145, 105);" href="#">Pending</a></li>
+        <li><a class="dropdown-item" style="color: rgb(255, 145, 105);" href="#">Rejected</a></li>
+    </ul>
+</div> -->
 
 
 

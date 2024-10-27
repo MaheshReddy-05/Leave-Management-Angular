@@ -9,3 +9,23 @@
     margin: 12px;
     padding: 32px;
 }
+
+.cus-card{
+  padding: 36px 32px;
+  background-color: #16171B; 
+  border-radius: 8px; 
+  border-color: rgba(106, 106, 207, 0.2); 
+  border-width: 1px; 
+  border-style: solid;
+}
+.cus-h1{
+  color: #E6E6E6;
+}
+.cus-h2{
+  color: #A5A7B3;
+}
+.cus-table-border{
+  border-bottom: 1px solid rgba(106, 106, 207, 0.2); 
+  margin-bottom: 16px; 
+  padding-bottom: 8px;
+}

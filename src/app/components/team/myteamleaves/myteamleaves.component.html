@@ -1,56 +1,59 @@
 <div class="custom-ml" style="margin-top: 20px; padding-top: 20px;">
-    <h2 >Leave Requests</h2>
-    <table class="w-100 text-center">
-        <thead class="" style="background-color: #2274d1;">
-            <tr>
-                <th>Name</th>
-                <th>Leave Type</th>
-                <th>Reason</th>
-                <th>From Date</th>
-                <th>To Date</th>
-                <th>Leave Count</th>
-                <th>Applied On</th>
-                <th>
-                    <div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Status
-                        </a>
-                      
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Approved</a></li>
-                          <li><a class="dropdown-item" href="#">Pending</a></li>
-                          <li><a class="dropdown-item" href="#">Rejected</a></li>
-                        </ul>
-                      </div>
-                </th>
-                <th>Dummy Column</th>
-            </tr>
-        </thead>
-        <tbody >
-            <tr *ngFor="let leave of teamLeaveRequests">
-                <td>{{leave.employeeName}}</td>
-                <td>{{leave.leaveType}}</td>
-                <td>{{leave.reason}}</td>
-                <td>{{leave.fromDate}}</td>
-                <td>{{leave.toDate}}</td>
-                <td>{{leave.leaveCount}}</td>
-                <td>{{leave.createdAt}}</td>
-                <td>
-                     <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
-                    <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px">
-                    <div *ngIf="leave.status==='Pending'">
-                        <a  (click)="updateLeaveStatus(leave.leaveId,'Approved')">
-                            <img src="assets/images/check-mark.png" alt="" height="40px">
-                        </a>
-                        <a (click)="updateLeaveStatus(leave.leaveId,'Rejected')">
-                            <img src="assets/images/multiplication.png" alt="" height="24px">
-                        </a>
-                    </div>
-                </td>
-                <td> <a (click)="openModal()">Check Modal</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="cus-card">
+
+        <h2 class="cus-h1">Leave Requests</h2>
+        <table class="w-100 text-center">
+            <thead class="" style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white;">
+                <tr>
+                    <th>Name</th>
+                    <th>Leave Type</th>
+                    <th>Reason</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Leave Count</th>
+                    <th>Applied On</th>
+                    <th>
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Status
+                            </a>
+                            
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Approved</a></li>
+                                <li><a class="dropdown-item" href="#">Pending</a></li>
+                                <li><a class="dropdown-item" href="#">Rejected</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>Dummy Column</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let leave of teamLeaveRequests" class="cus-h2">
+                    <td>{{leave.employeeName}}</td>
+                    <td>{{leave.leaveType}}</td>
+                    <td>{{leave.reason}}</td>
+                    <td>{{leave.fromDate}}</td>
+                    <td>{{leave.toDate}}</td>
+                    <td>{{leave.leaveCount}}</td>
+                    <td>{{leave.createdAt}}</td>
+                    <td>
+                        <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
+                        <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px">
+                        <div *ngIf="leave.status==='Pending'">
+                            <a  (click)="updateLeaveStatus(leave.leaveId,'Approved')">
+                                <img src="assets/images/check-mark.png" alt="" height="40px">
+                            </a>
+                            <a (click)="updateLeaveStatus(leave.leaveId,'Rejected')">
+                                <img src="assets/images/multiplication.png" alt="" height="24px">
+                            </a>
+                        </div>
+                    </td>
+                    <td> <a (click)="openModal()">Check Modal</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 

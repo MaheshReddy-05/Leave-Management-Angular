@@ -21,6 +21,7 @@ import { ApplyleaveComponent } from './components/applyleave/applyleave.componen
 import { HeaderComponent } from './components/header/header.component';
 import { AlldashboardComponent } from './components/alldashboard/alldashboard.component';
 import { LeaveactionssummaryComponent } from './components/team/leaveactionssummary/leaveactionssummary.component';
+import { ProgressbarsComponent } from './components/dashboard/progressbars/progressbars.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,7 @@ const routes: Routes = [
     HeaderComponent,
     AlldashboardComponent,
     LeaveactionssummaryComponent,
+    ProgressbarsComponent,
   ],
   imports: [
     BrowserModule,

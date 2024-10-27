@@ -8,7 +8,11 @@ import { DashboardService } from '../../services/dashboard.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  
+  employeeDetails = {
+    employeeName: "Blah",
+    employeeGender : "Female"
+  }
+
   constructor(private router: Router,private dashboardService:DashboardService) {
     
   }

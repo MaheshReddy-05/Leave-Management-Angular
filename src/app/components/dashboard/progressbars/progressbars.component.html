@@ -1,0 +1,16 @@
+<div class="progress">
+    <svg class="progress-bar" width="300" height="300">
+      <circle cx="150" cy="150" r="135"></circle>
+      <circle
+        cx="150"
+        cy="150"
+        r="135"
+        [attr.stroke-dashoffset]="calculateDashOffset(currentValue, totalValue)"
+      ></circle>
+    </svg>
+    <div class="text">
+      {{ currentValue }} / {{ totalValue }}
+      <span>Progress</span>
+    </div>
+  </div>
+  

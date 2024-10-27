@@ -1,7 +1,7 @@
 
- <div class="text-center">
+ <div class="text-center" style="margin-bottom: 20px;">
 
-   <button type="button" class="btn w-100" style="background-color: #2274d1;" (click)="openModal()">Apply for Leave</button>
+   <button type="button" class="btn w-100" style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" (click)="openModal()">Apply for Leave</button>
  </div>
 
 <div class="modal fade" id="leaveModal" tabindex="-1" aria-labelledby="leaveModalLabel" aria-hidden="true" #modal>
@@ -43,7 +43,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" [disabled]="!leaveForm.valid">Submit</button>
+            <button type="submit" class="btn " style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" [disabled]="!leaveForm.valid">Submit</button>
             <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
           </div>
         </form>

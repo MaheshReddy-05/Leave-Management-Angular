@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { BadgeCheckIcon } from "@vue-hero-icons/outline"
+// import { BadgeCheckIcon } from "@vue-hero-icons/outline"
 
 @Component({
   selector: 'app-root',

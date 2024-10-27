@@ -1,41 +1,44 @@
-<div class="custom-ml" style="margin-top: 20px; padding-top: 20px;">
-    <h2 >Leave Requests</h2>
-    <table class="w-100 text-center">
-        <thead>
-            <tr class="" style="background-color: #2274d1;">
-                <th>Leave Type</th>
-                <th>Reason</th>
-                <th>From Date</th>
-                <th>To Date</th>
-                <th>Leave Count</th>
-                <th>
-                    <div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Status
-                        </a>
-                      
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Approved</a></li>
-                          <li><a class="dropdown-item" href="#">Pending</a></li>
-                          <li><a class="dropdown-item" href="#">Rejected</a></li>
-                        </ul>
-                      </div>
-                </th>
-            </tr>
-        </thead>
-        <tbody >
-            <tr *ngFor="let leave of allMyLeaves">
-                <td>{{leave.leaveType}}</td>
-                <td>{{leave.reason}}</td>
-                <td>{{leave.fromDate}}</td>
-                <td>{{leave.toDate}}</td>
-                <td>{{leave.leaveCount}}</td>
-                <td>
-                    <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
-                    <img *ngIf="leave.status==='Pending'"  src="assets/images/alert.png" alt="" height="32px">
-                    <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px">
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="custom-ml " style="margin-top: 20px; padding-top: 20px;">
+    <div class="cus-card">
+
+        <h2 class="cus-h1" >Leave Requests</h2>
+        <table class="w-100 text-center">
+            <thead>
+                <tr class=""  style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white;">
+                    <th>Leave Type</th>
+                    <th>Reason</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Leave Count</th>
+                    <th>
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle " style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Status
+                            </a>
+                            
+                            <ul class="dropdown-menu cus-card" >
+                                <li><a class="dropdown-item " style="color: rgb(255, 145, 105);" href="#">Approved</a></li>
+                                <li><a class="dropdown-item"  style="color: rgb(255, 145, 105);" href="#">Pending</a></li>
+                                <li><a class="dropdown-item" style="color: rgb(255, 145, 105);" href="#">Rejected</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let leave of allMyLeaves" class="cus-h2"> 
+                    <td>{{leave.leaveType}}</td>
+                    <td>{{leave.reason}}</td>
+                    <td>{{leave.fromDate}}</td>
+                    <td>{{leave.toDate}}</td>
+                    <td>{{leave.leaveCount}}</td>
+                    <td>
+                        <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
+                        <img *ngIf="leave.status==='Pending'"  src="assets/images/alert.png" alt="" height="32px">
+                        <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
