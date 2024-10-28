@@ -1,23 +1,20 @@
 <div class="cus-card h-100">
     <h2 class="cus-h1">Recent Leaves</h2>
-    <table class="w-100">
-        <thead>
-            <tr style="background: linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white;">
-                <th>Leave Type</th>
-                <th>Reason</th>
-                <th class="text-center">From Date</th>
-                <th class="text-center">To Date</th>
-                <th class="text-center">Leave Count</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let leave of topFourLeaves" class="cus-h2 cus-table-border">
-                <td>{{leave.leaveType}}</td>
-                <td>{{leave.reason}}</td>
-                <td class="text-center">{{leave.fromDate}}</td>
-                <td class="text-center">{{leave.toDate}}</td>
-                <td class="text-center">{{leave.leaveCount}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="w-100">
+        <ul class="d-flex header-row" style="background: linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white; border-radius: 4px;">
+            <li class="column-header">Leave Type</li>
+            <li class="column-header">Reason</li>
+            <li class="column-header">From Date</li>
+            <li class="column-header">To Date</li>
+            <li class="column-header">Leave Count</li>
+        </ul>
+
+        <ul *ngFor="let leave of topFourLeaves" class="d-flex leave-row cus-h2 cus-table-border">
+            <li class="column-content">{{leave.leaveType}}</li>
+            <li class="column-content">{{leave.reason}}</li>
+            <li class="column-content">{{leave.fromDate}}</li>
+            <li class="column-content">{{leave.toDate}}</li>
+            <li class="column-content">{{leave.leaveCount}}</li>
+        </ul>
+    </div>
 </div>

@@ -26,28 +26,30 @@
               <option *ngIf="gender === 'Female'" value="Maternity Leave">Maternity Leave</option>
             </select>
           </div>
-
+      
           <div class="mb-3">
             <label for="reason" class="form-label">Reason</label>
             <input type="text" class="form-control" id="reason" formControlName="reason" placeholder="Enter reason" required>
           </div>
-
+      
           <div class="mb-3">
             <label for="fromDate" class="form-label">From Date</label>
             <input type="date" class="form-control" id="fromDate" formControlName="fromDate" required>
           </div>
-
+      
           <div class="mb-3">
             <label for="toDate" class="form-label">To Date</label>
             <input type="date" class="form-control" id="toDate" formControlName="toDate" required>
+            <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
           </div>
-
+      
           <div class="modal-footer">
-            <button type="submit" class="btn " style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" [disabled]="!leaveForm.valid">Submit</button>
+            <button type="submit" class="btn" style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" [disabled]="!leaveForm.valid || errorMessage">Submit</button>
             <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
           </div>
         </form>
       </div>
+            
     </div>
   </div>
 </div>

@@ -1,7 +1,9 @@
 <div class="custom-ml" style="margin-top: 20px; padding-top: 20px; background-color: #0b0c14;">
    
-    <app-leavecard></app-leavecard>
-    <app-applyleave ></app-applyleave>
+    <app-leavecard (messageFromLeaveC)="cdata=$event"></app-leavecard>
+
+    <app-applyleave [leaveSummary]="cdata"></app-applyleave>
+
     <div class="container" style="">
         <div class="row">
             <div class="col-4">

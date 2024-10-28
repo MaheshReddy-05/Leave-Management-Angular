@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, Output, EventEmitter } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard.service';
 
 interface leaveCard{
@@ -15,6 +15,8 @@ interface leaveCard{
 
 
 export class LeavecardComponent implements OnInit {
+  
+  @Output() messageFromLeaveC = new EventEmitter<any>();
 
   leaveCards:any={
     employeeId: 0,
@@ -24,12 +26,16 @@ export class LeavecardComponent implements OnInit {
     paternityLeave: 0,
     personalTimeOff: 0
   };
-  
+
   employeeDetails = {
     employeeName: "Blah",
     employeeGender : "Female"
   }
   constructor(public dashboardService: DashboardService){
+  }
+
+  passToParent(){
+    this.messageFromLeaveC.emit(this.leaveCards);
   }
 
   ngOnInit(): void {
@@ -45,7 +51,8 @@ export class LeavecardComponent implements OnInit {
       {
         next: (data)=> {
           this.leaveCards = data;
-        }
+        },
+        complete: ()=>{ this.passToParent()}
       }
     )
   }
@@ -56,7 +63,9 @@ export class LeavecardComponent implements OnInit {
             this.employeeDetails.employeeGender = genderName[0];
             this.employeeDetails.employeeName = genderName[1];},
           error: err => console.error('Observer got an error: ' + err),
-          complete: () => this.getLeaveSummary(),
+          complete: () =>{
+            this.getLeaveSummary()
+          }
         }
     );
 }
