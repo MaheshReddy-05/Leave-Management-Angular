@@ -22,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AlldashboardComponent } from './components/alldashboard/alldashboard.component';
 import { LeaveactionssummaryComponent } from './components/team/leaveactionssummary/leaveactionssummary.component';
 import { ProgressbarsComponent } from './components/dashboard/progressbars/progressbars.component';
+import { TableComponent } from './reusecomp/table/table.component';
 
 const routes: Routes = [
   {
@@ -68,6 +69,7 @@ const routes: Routes = [
     AlldashboardComponent,
     LeaveactionssummaryComponent,
     ProgressbarsComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,

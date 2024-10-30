@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+.cus-card{
+    padding: 36px 32px;
+    background-color: #16171B; 
+    border-radius: 8px; 
+    border-color: rgba(106, 106, 207, 0.2); 
+    border-width: 1px; 
+    border-style: solid;
+}
+.cus-h1{
+    color: #E6E6E6;
+}
+.cus-h2{
+    color: #A5A7B3;
+}
+.cus-table-border{
+    border-bottom: 1px solid rgba(106, 106, 207, 0.2); 
+    margin-bottom: 8px; 
+    padding-bottom: 8px;
+}
+
+
+.column-header, .column-content {
+    width: 20%;
+    flex-shrink: 0; 
+    text-align: center;
+    padding: 4px 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+.header-row {
+    font-weight: bold;
+}

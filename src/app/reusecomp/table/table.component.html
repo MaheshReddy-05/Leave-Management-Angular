@@ -1,0 +1,8 @@
+<ul  class="d-flex header-row" style="background: linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white; border-radius: 4px;">
+    <li  *ngFor="let tableCol of tableHeaders" class="column-header">{{tableCol}}</li>
+</ul>
+
+<ul *ngFor="let leave of tableBody" style="display: flex;" class="leave-row cus-h2 cus-table-border">
+    <li *ngFor="let key of Object.keys(leave)" class="column-content">{{leave[key]}}</li>
+</ul>
+
