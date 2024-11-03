@@ -22,11 +22,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { AlldashboardComponent } from './components/alldashboard/alldashboard.component';
 import { LeaveactionssummaryComponent } from './components/team/leaveactionssummary/leaveactionssummary.component';
 import { ProgressbarsComponent } from './components/dashboard/progressbars/progressbars.component';
-import { TableComponent } from './reusecomp/table/table.component';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
     path: 'my-data',
+    canActivate: [AuthService],
     children: [
       { path: 'leave-summary', component: AlldashboardComponent },
       { path: 'leave-requests', component: MyleavestableComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'team',
+    canActivate: [AuthService],
     children: [
       { path: 'team-leaves', component: MyteamleavesComponent },
       { path: 'team-summary', component: MyteamsummaryComponent },
@@ -69,7 +71,6 @@ const routes: Routes = [
     AlldashboardComponent,
     LeaveactionssummaryComponent,
     ProgressbarsComponent,
-    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +86,7 @@ const routes: Routes = [
     LeaveService,
     LoginService,
     provideHttpClient(withFetch()),
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

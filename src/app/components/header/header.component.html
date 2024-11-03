@@ -14,15 +14,8 @@
       </div>
       <div class="">
         <div>
-          <div class="dropdown">
-            <a class="btn dropdown-toggle " style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Menu
-            </a>
-            <ul class="dropdown-menu cus-card" >
-                <li><a class="dropdown-item " style="color: rgb(255, 145, 105);" href="#">Leaves</a></li>
-                <li><a class="dropdown-item"  style="color: rgb(255, 145, 105);" href="#">Requests</a></li>
-                <li><a class="dropdown-item" style="color: rgb(255, 145, 105);" routerLink="/login">Logout</a></li>
-            </ul>
+          <div class="">
+            <a class="dropdown-item" style="color: rgb(255, 145, 105);" routerLink="/login">Logout</a>
         </div>
         </div>
       </div>
@@ -30,8 +23,6 @@
   </nav>
   <!-- <div style="background-color: #dee2f9; padding: 6px;" > -->
     <div style="margin-left: 10rem;">
-
-      
       <ng-container *ngIf="isMyDataActive()">
         <ul class="sub-nav">
           <li><a routerLink="/my-data/leave-summary" routerLinkActive="active-link">Leave Summary</a></li>

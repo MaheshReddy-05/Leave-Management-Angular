@@ -17,9 +17,9 @@
                             </a>
                             
                             <ul class="dropdown-menu cus-card" >
-                                <li><a class="dropdown-item " style="color: rgb(255, 145, 105);" href="#">Approved</a></li>
-                                <li><a class="dropdown-item"  style="color: rgb(255, 145, 105);" href="#">Pending</a></li>
-                                <li><a class="dropdown-item" style="color: rgb(255, 145, 105);" href="#">Rejected</a></li>
+                                <li><a class="dropdown-item " style="color: rgb(255, 145, 105);" (click)="getAllMyLeaves('Approved')">Approved</a></li>
+                                <li><a class="dropdown-item"  style="color: rgb(255, 145, 105);" (click)="getAllMyLeaves('Pending')">Pending</a></li>
+                                <li><a class="dropdown-item" style="color: rgb(255, 145, 105);" (click)="getAllMyLeaves('Rejected')">Rejected</a></li>
                             </ul>
                         </div>
                     </th>

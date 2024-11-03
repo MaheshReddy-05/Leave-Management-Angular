@@ -2,8 +2,8 @@
     <h2 class="cus-h1">Recent Leaves</h2>
     <div class="w-100">
 
-        <app-table [tableHeaders]="['Leave Type','Reason','From Date','To Date','Leave Count']" [tableBody]="topFourLeaves"></app-table>
-        <!-- <ul class="d-flex header-row" style="background: linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white; border-radius: 4px;">
+        <!-- <app-table [tableHeaders]="['Leave Type','Reason','From Date','To Date','Leave Count']" [tableBody]="topFourLeaves"></app-table> -->
+        <ul class="d-flex header-row" style="background: linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%); color: white; border-radius: 4px;">
             <li class="column-header">Leave Type</li>
             <li class="column-header">Reason</li>
             <li class="column-header">From Date</li>
@@ -17,6 +17,6 @@
             <li class="column-content">{{leave.fromDate}}</li>
             <li class="column-content">{{leave.toDate}}</li>
             <li class="column-content">{{leave.leaveCount}}</li>
-        </ul> -->
+        </ul>
     </div>
 </div>

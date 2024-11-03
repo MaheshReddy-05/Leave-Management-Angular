@@ -29,3 +29,10 @@
   margin-bottom: 16px; 
   padding-bottom: 8px;
 }
+
+.bordered-col {
+  border-left: 1px solid #FF8C00; /* Dark orange */
+  /* Or use purple */
+  /* border-left: 1px solid #8A2BE2; /* Dark purple */
+  padding-left: 15px; /* Optional, to add some spacing from the border */
+}

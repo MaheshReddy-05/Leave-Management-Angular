@@ -16,18 +16,18 @@ export class MyteamleavesComponent implements OnInit{
   private bootstrapModal: any;
 
   ngOnInit(): void {
-    this.getMyTeamLeaves();
+    this.getMyTeamLeaves('Pending');
   }
   updateLeaveStatus(leaveId:any,leaveStatus:string){
 
     this.leaveService.updateLeaveAsManager(leaveId,leaveStatus).subscribe((data)=>{
       console.log(data);
-      this.getMyTeamLeaves();
+      this.getMyTeamLeaves('Pending');
     })
     
   }
-  getMyTeamLeaves(){
-    this.leaveService.getAllLeavesAsManager().subscribe((data)=>{
+  getMyTeamLeaves(leaveStatus:string){
+    this.leaveService.getAllLeavesAsManager(leaveStatus).subscribe((data)=>{
       console.log(data);
       this.teamLeaveRequests = data;
     })

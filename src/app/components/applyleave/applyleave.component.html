@@ -1,8 +1,6 @@
-
- <div class="text-center" style="margin-bottom: 20px;">
-
-   <button type="button" class="btn w-100" style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" (click)="openModal()">Apply for Leave</button>
- </div>
+<div class="text-center" style="margin-bottom: 20px;">
+  <button type="button" class="btn w-100" style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" (click)="openModal()">Apply for Leave</button>
+</div>
 
 <div class="modal fade" id="leaveModal" tabindex="-1" aria-labelledby="leaveModalLabel" aria-hidden="true" #modal>
   <div class="modal-dialog">
@@ -26,30 +24,31 @@
               <option *ngIf="gender === 'Female'" value="Maternity Leave">Maternity Leave</option>
             </select>
           </div>
-      
+
           <div class="mb-3">
             <label for="reason" class="form-label">Reason</label>
             <input type="text" class="form-control" id="reason" formControlName="reason" placeholder="Enter reason" required>
           </div>
-      
+
           <div class="mb-3">
             <label for="fromDate" class="form-label">From Date</label>
             <input type="date" class="form-control" id="fromDate" formControlName="fromDate" required>
+            <div *ngIf="leaveForm.get('fromDate')?.hasError('weekend')" class="text-danger">From Date cannot be on a weekend.</div>
           </div>
-      
+
           <div class="mb-3">
             <label for="toDate" class="form-label">To Date</label>
             <input type="date" class="form-control" id="toDate" formControlName="toDate" required>
-            <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+            <div *ngIf="leaveForm.get('toDate')?.hasError('weekend')" class="text-danger">To Date cannot be on a weekend.</div>
+            <div *ngIf="errorMessage && !leaveForm.get('toDate')?.hasError('weekend')" class="text-danger">{{ errorMessage }}</div>
           </div>
-      
+
           <div class="modal-footer">
             <button type="submit" class="btn" style="background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" [disabled]="!leaveForm.valid || errorMessage">Submit</button>
             <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
           </div>
         </form>
       </div>
-            
     </div>
   </div>
 </div>

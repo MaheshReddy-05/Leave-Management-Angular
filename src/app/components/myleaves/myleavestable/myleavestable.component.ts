@@ -12,11 +12,11 @@ export class MyleavestableComponent implements OnInit{
   constructor(private leavesService: LeaveService){}
   
   ngOnInit(): void {
-    this.getAllMyLeaves();
+    this.getAllMyLeaves('Pending');
   }
 
-  getAllMyLeaves(){
-    this.leavesService.getAllMyLeaves().subscribe((data)=>{
+  getAllMyLeaves(leaveStatus:string){
+    this.leavesService.getAllMyLeaves(leaveStatus).subscribe((data)=>{
       console.log(data)
       this.allMyLeaves = data
     })

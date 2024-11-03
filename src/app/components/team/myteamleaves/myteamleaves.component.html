@@ -17,11 +17,10 @@
                             <a class="btn dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Status
                             </a>
-                            
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Approved</a></li>
-                                <li><a class="dropdown-item" href="#">Pending</a></li>
-                                <li><a class="dropdown-item" href="#">Rejected</a></li>
+                                <li><a class="dropdown-item" (click)="getMyTeamLeaves('Approved')">Approved</a></li>
+                                <li><a class="dropdown-item" (click)="getMyTeamLeaves('Pending')">Pending</a></li>
+                                <li><a class="dropdown-item" (click)="getMyTeamLeaves('Rejected')">Rejected</a></li>
                             </ul>
                         </div>
                     </th>
@@ -49,51 +48,9 @@
                             </a>
                         </div>
                     </td>
-                    <!-- <td> <a (click)="openModal()">Check Modal</a></td> -->
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
 
-
-<div class="modal fade" id="leaveModal" tabindex="-1" aria-labelledby="leaveModalLabel" aria-hidden="true" #modal>
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="leaveModalLabel">Employee Leave Data</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
-        </div>
-        <div class="modal-body">
-            <div class="container text-center summary-card">
-                <!-- <h4>{{}}</h4> -->
-                <div>
-                    <span class="">Compensatory Off: </span>
-                    <span class="">{{0}}/5</span>
-                </div>
-                <div>
-                    <span class="">Loss of Pay: </span>
-                    <span class="">{{0}}/5</span>
-                </div>
-                <div>
-                    <span class="">Personal Time Off: </span>
-                    <span class="">{{0}}/15</span>
-                </div>
-                <!-- {{member.gender}} -->
-                <!-- <div *ngIf="member.gender.startsWith('Female')">
-                    <span class="">Maternity Leave: </span>
-                    <span class="">{{member.maternityLeave}}/90</span>
-                </div>
-                <div *ngIf="member.gender.startsWith('Male')">
-                    <span class="">Paternity Leave: </span>
-                    <span class="">{{member.paternityLeave}}/9</span>
-                </div> -->
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Approve</button>
-          </div>
-      </div>
-    </div>
-  </div>
