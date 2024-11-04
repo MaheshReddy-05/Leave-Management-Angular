@@ -14,17 +14,16 @@
                     <th>Applied On</th>
                     <th>
                         <div class="dropdown">
-                            <a class="btn dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="btn dropdown-toggle" style="color: white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Status
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" (click)="getMyTeamLeaves('Approved')">Approved</a></li>
-                                <li><a class="dropdown-item" (click)="getMyTeamLeaves('Pending')">Pending</a></li>
-                                <li><a class="dropdown-item" (click)="getMyTeamLeaves('Rejected')">Rejected</a></li>
+                                <li><a role="button" class="dropdown-item" (click)="getMyTeamLeaves('Approved')">Approved</a></li>
+                                <li><a role="button" class="dropdown-item" (click)="getMyTeamLeaves('Pending')">Pending</a></li>
+                                <li><a role="button" class="dropdown-item" (click)="getMyTeamLeaves('Rejected')">Rejected</a></li>
                             </ul>
                         </div>
                     </th>
-                    <!-- <th>Dummy Column</th> -->
                 </tr>
             </thead>
             <tbody >
@@ -40,10 +39,10 @@
                         <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
                         <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px">
                         <div *ngIf="leave.status==='Pending'">
-                            <a  (click)="updateLeaveStatus(leave.leaveId,'Approved')">
+                            <a role="button"  (click)="updateLeaveStatus(leave.leaveId,'Approved')">
                                 <img src="assets/images/check-mark.png" alt="" height="40px">
                             </a>
-                            <a (click)="updateLeaveStatus(leave.leaveId,'Rejected')">
+                            <a role="button" (click)="updateLeaveStatus(leave.leaveId,'Rejected')">
                                 <img src="assets/images/multiplication.png" alt="" height="24px">
                             </a>
                         </div>

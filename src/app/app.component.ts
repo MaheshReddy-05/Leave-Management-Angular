@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-// import { BadgeCheckIcon } from "@vue-hero-icons/outline"
 
 @Component({
   selector: 'app-root',
@@ -18,7 +17,6 @@ export class AppComponent implements OnInit  {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.showHeader = !event.url.startsWith('/login');
-        console.log(this.showHeader);
       });
   }
 }

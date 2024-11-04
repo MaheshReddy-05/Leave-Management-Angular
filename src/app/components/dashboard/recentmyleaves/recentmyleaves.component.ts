@@ -23,7 +23,7 @@ export class RecentmyleavesComponent implements OnInit{
   
   ngOnInit(): void {
   }
-
+  
   getTopFourLeaves(){
     this.dashboardService.getTopFourApprovedLeaves().subscribe((data)=>{
       this.topFourLeaves = data;

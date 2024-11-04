@@ -17,7 +17,7 @@ import { MyteamleavesComponent } from './components/team/myteamleaves/myteamleav
 import { MyteamsummaryComponent } from './components/team/myteamsummary/myteamsummary.component';
 import { LoginComponent } from './components/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { ApplyleaveComponent } from './components/applyleave/applyleave.component';
+import { ApplyleaveComponent } from './components/dashboard/applyleave/applyleave.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AlldashboardComponent } from './components/alldashboard/alldashboard.component';
 import { LeaveactionssummaryComponent } from './components/team/leaveactionssummary/leaveactionssummary.component';

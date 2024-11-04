@@ -31,8 +31,5 @@
 }
 
 .bordered-col {
-  border-left: 1px solid #FF8C00; /* Dark orange */
-  /* Or use purple */
-  /* border-left: 1px solid #8A2BE2; /* Dark purple */
-  padding-left: 15px; /* Optional, to add some spacing from the border */
+  border-left: 1px solid rgb(255, 145, 105);; 
 }

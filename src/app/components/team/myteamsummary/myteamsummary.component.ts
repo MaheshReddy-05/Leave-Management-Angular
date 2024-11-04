@@ -17,7 +17,6 @@ export class MyteamsummaryComponent implements OnInit{
   
   getTeamLeaveSummary(){
     this.leaveService.getLeaveSummaryAsManager().subscribe((data)=>{
-      console.log(data)
       this.teamLeaveSummary = data;
     })
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { LeaveService } from '../../services/leave.service';
+import { LeaveService } from '../../../services/leave.service';
 
 @Component({
   selector: 'app-applyleave',
@@ -129,7 +129,6 @@ export class ApplyleaveComponent implements OnInit {
 
       const finalFormData = { ...formData, ...customData };
       this.leaveService.applyLeave(finalFormData).subscribe((data) => {
-        console.log(data);
         this.closeModal();
       });
     }

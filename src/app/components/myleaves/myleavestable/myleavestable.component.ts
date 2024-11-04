@@ -17,7 +17,6 @@ export class MyleavestableComponent implements OnInit{
 
   getAllMyLeaves(leaveStatus:string){
     this.leavesService.getAllMyLeaves(leaveStatus).subscribe((data)=>{
-      console.log(data)
       this.allMyLeaves = data
     })
   }

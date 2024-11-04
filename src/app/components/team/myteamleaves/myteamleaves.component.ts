@@ -21,22 +21,18 @@ export class MyteamleavesComponent implements OnInit{
   updateLeaveStatus(leaveId:any,leaveStatus:string){
 
     this.leaveService.updateLeaveAsManager(leaveId,leaveStatus).subscribe((data)=>{
-      console.log(data);
       this.getMyTeamLeaves('Pending');
     })
     
   }
   getMyTeamLeaves(leaveStatus:string){
     this.leaveService.getAllLeavesAsManager(leaveStatus).subscribe((data)=>{
-      console.log(data);
       this.teamLeaveRequests = data;
     })
   }
   login(email:string,password:string){
-    this.leaveService.login(email,password).subscribe((data)=>
-    console.log(data))
+    this.leaveService.login(email,password).subscribe()
   }
-  // Model Code
 
   triggerModalOpen(): void {
     this.openModal();
