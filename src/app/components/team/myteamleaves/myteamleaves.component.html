@@ -37,13 +37,15 @@
                     <td>{{leave.createdAt}}</td>
                     <td>
                         <img *ngIf="leave.status==='Approved'" src="assets/images/check-mark.png" alt="" height="40px">
-                        <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px">
+                        <i  *ngIf="leave.status==='Rejected'" class="fa-solid fa-xmark fa-xl" style="color: #f35959;"></i>
+                        <!-- <img *ngIf="leave.status==='Rejected'" src="assets/images/multiplication.png" alt="" height="24px"> -->
                         <div *ngIf="leave.status==='Pending'">
                             <a role="button"  (click)="updateLeaveStatus(leave.leaveId,'Approved')">
                                 <img src="assets/images/check-mark.png" alt="" height="40px">
                             </a>
                             <a role="button" (click)="updateLeaveStatus(leave.leaveId,'Rejected')">
-                                <img src="assets/images/multiplication.png" alt="" height="24px">
+                                <i   class="fa-solid fa-xmark fa-xl" style="color: #f35959;"></i>
+                                <!-- <img src="assets/images/multiplication.png" alt="" height="24px"> -->
                             </a>
                         </div>
                     </td>

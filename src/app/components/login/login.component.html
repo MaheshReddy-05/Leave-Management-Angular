@@ -6,18 +6,19 @@
                 <form [formGroup]="profileForm">
                     <h2 class="text-center">Login</h2>
                     <label class="w-100" for="">Email Address</label> <br>
-                    <input class="w-100" type="email" formControlName="email"> <br>
+                    <input class="w-100" required type="email" formControlName="email"> <br>
                 
                     <label class="w-100" for="">password</label> <br>
-                    <input class="w-100" type="password" formControlName="password">
+                    <input class="w-100" required type="password" formControlName="password">
                 </form>
                 <br>
                 <div class="text-center ">
                     <div>
+                        <p style="color: red;">{{text}}</p>
                         <button class="btn btn-primary w-100" style="color: black; background:linear-gradient(353deg, #5B63D3 17.51%, #7C87F7 183.08%);" (click)="updateProfile()">Sign In</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div>  
