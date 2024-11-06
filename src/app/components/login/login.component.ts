@@ -19,7 +19,9 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {
+    
     localStorage.removeItem('userEmail');
+    localStorage.removeItem('sessionExpiration');
   }
 
   get email() {
@@ -35,7 +37,9 @@ export class LoginComponent implements OnInit {
       this.loginService.login(this.profileForm.value.email!, this.profileForm.value.password!).subscribe(
         (data) => {
           if (data === 'Valid') {
-            localStorage.setItem('userEmail', this.profileForm.value.email!);
+            localStorage.setItem('userEmail', 'randomEmail');
+            const expirationTime = new Date().getTime() + 3600000; 
+            localStorage.setItem('sessionExpiration', expirationTime.toString());
             this.router.navigate(['/my-data']);
           } else {
             this.text = "Invalid Credentials";

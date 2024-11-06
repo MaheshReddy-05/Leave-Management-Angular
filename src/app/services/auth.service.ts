@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,10 @@ export class AuthService implements CanActivate{
     const email = localStorage.getItem('userEmail');
         
         if (email) {
+          const sessionExpiration = localStorage.getItem('sessionExpiration');
+          if (sessionExpiration && new Date().getTime() > +sessionExpiration)
+            return false;
+          else
             return true;
         } else {
             this.router.navigate(['/login']);
