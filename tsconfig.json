@@ -18,6 +18,11 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
+    "paths": {
+      "status-tag": [
+        "./dist/status-tag"
+      ]
+    },
     "module": "ES2022",
     "lib": [
       "ES2022",

@@ -23,6 +23,8 @@ import { AlldashboardComponent } from './components/alldashboard/alldashboard.co
 import { LeaveactionssummaryComponent } from './components/team/leaveactionssummary/leaveactionssummary.component';
 import { ProgressbarsComponent } from './components/dashboard/progressbars/progressbars.component';
 import { AuthService } from './services/auth.service';
+import { StatusTagModule } from 'status-tag';
+// import { StatusTagModule } from '../../projects/status-tag/src/lib/status-tag.module';
 
 const routes: Routes = [
   {
@@ -78,6 +80,7 @@ const routes: Routes = [
     TooltipModule.forRoot(),
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
+    StatusTagModule
 
   ],
   providers: [
