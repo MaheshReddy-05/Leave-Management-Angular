@@ -24,6 +24,7 @@ import { LeaveactionssummaryComponent } from './components/team/leaveactionssumm
 import { ProgressbarsComponent } from './components/dashboard/progressbars/progressbars.component';
 import { AuthService } from './services/auth.service';
 import { StatusTagModule } from 'status-tag';
+import { TreeModule } from 'primeng/tree';
 // import { StatusTagModule } from '../../projects/status-tag/src/lib/status-tag.module';
 
 const routes: Routes = [
@@ -80,7 +81,8 @@ const routes: Routes = [
     TooltipModule.forRoot(),
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
-    StatusTagModule
+    StatusTagModule,
+    TreeModule
 
   ],
   providers: [
