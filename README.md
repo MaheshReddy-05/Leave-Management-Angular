@@ -1,28 +1,41 @@
-# LeaveManagement
+# Leave Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+This project is a **Leave Management System** designed to streamline leave management for your organization. Employees can easily request leaves, track their remaining balance, and view team leave schedules.
 
-## Development server
+---
+## User Interface
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Dashboard](Dashboard.png)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The system offers a user-friendly interface with the following functionalities:
 
-## Build
+### Frontend
+- Built using the powerful **Angular** framework for a smooth and responsive user experience.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Backend
+- Developed using **Java** for robust performance and scalability.
+- Hosted on a reliable **Tomcat server** for efficient deployment.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+### Prerequisites
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Before diving in, ensure you have the following tools installed:
 
-## Further help
+- **Frontend:** Node.js and Angular CLI for building the user interface.
+- **Backend:** Java Development Kit (JDK 11 or above) to compile the backend code.
+- **Server:** Apache Tomcat server for deploying the backend application.
+- **Database:** A database system like MySQL or PostgreSQL to store leave data (not included in this project).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# Leave-Management-Angular
+---
+
+### Setup
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/MaheshReddy-05/Leave-Management-Angular.git  
+cd Leave-Management-Angular
